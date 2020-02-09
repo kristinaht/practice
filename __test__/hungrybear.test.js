@@ -6,19 +6,20 @@ import { HungryBear } from "./../src/hungrybear.js";
 
   beforeEach(function(){
     fuzzy = new HungryBear("Fuzzy");
+    fuzzy.setHunger();
   });
 
   afterEach(function(){
     jest.clearAllTimers();
   });
 
-  test("should have a nam end a food level of 10 when it is created", () => {
+  test("should have a name end a food level of 10 when it is created", () => {
     expect(fuzzy.name).toEqual("Fuzzy");
     expect(fuzzy.foodLevel).toEqual(10);
   });
 
   test("should have a food level of 7 after 3001 milliseconds", () => {
-    jest.advanceTimersbyTime(3001);
+    jest.advanceTimersByTime(3001);
     expect(fuzzy.foodLevel).toEqual(7);
   });
   });
